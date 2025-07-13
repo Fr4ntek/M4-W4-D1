@@ -12,7 +12,6 @@ public class ChangeColor : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-
         _renderer.material.color = Random.ColorHSV();
     }
 }

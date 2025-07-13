@@ -30,8 +30,12 @@ public class PlayerShootController : MonoBehaviour
             GameObject currentHit = hitInfo.collider.gameObject;
             if (currentHit != _lastHitObject)
             {
-                hitInfo.collider.GetComponent<IInteractable>().Interact();
-                _lastHitObject = currentHit;
+
+                if(hitInfo.collider.TryGetComponent<IInteractable>(out IInteractable _interface))
+                {
+                    _interface.Interact();
+                    _lastHitObject = currentHit;
+                }   
             }
         }
         else
