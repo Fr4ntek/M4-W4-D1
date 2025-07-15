@@ -830,6 +830,8 @@ GameObject:
   - component: {fileID: 1343360342}
   - component: {fileID: 1343360341}
   - component: {fileID: 1343360340}
+  - component: {fileID: 1343360343}
+  - component: {fileID: 1343360344}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -905,12 +907,43 @@ Transform:
   m_GameObject: {fileID: 1343360339}
   serializedVersion: 2
   m_LocalRotation: {x: 0.04361945, y: -0.0033702776, z: 0.000060139155, w: 0.9990426}
-  m_LocalPosition: {x: 0, y: 0.636, z: -0.425}
+  m_LocalPosition: {x: -3.7, y: 6.82, z: -17.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1468262587}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 5, y: -0.387, z: -0.01}
+--- !u!114 &1343360343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343360339}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d87e0644750ed4d9f30928fd4ee58e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 103081011}
+--- !u!114 &1343360344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343360339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d700d96e3803a94aabd27db9fe72103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1468262587}
+  _distance: 10
+  _xSpeed: 500
+  _ySpeed: 200
+  _yMin: -10
+  _yMax: 80
 --- !u!1 &1468262581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1079,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _rotationSpeed: 2
+  _rotationSpeed: 10
+  _cameraTransform: {fileID: 1343360342}
 --- !u!4 &1468262587
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,7 +1095,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 103081012}
-  - {fileID: 1343360342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1468262588
@@ -1625,6 +1658,7 @@ Mesh:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1343360342}
   - {fileID: 1122749412}
   - {fileID: 298963207}
   - {fileID: 1468262587}
